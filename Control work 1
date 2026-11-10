@@ -1,0 +1,52 @@
+class Animal:
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
+
+    def get_name(self):
+        return self.__name
+
+    def set_name(self, name):
+        self.__name = name
+
+    def get_age(self):
+        return self.__age
+
+    def set_age(self, age):
+        self.__age = age
+
+    def make_sound(self):
+        return "Какой-то звук"
+
+
+class Dog(Animal):
+    def make_sound(self):
+        return "Гав-гав!"
+
+
+class Cat(Animal):
+    def make_sound(self):
+        return "Мяу!"
+
+
+animal = Animal("Животное", 1)
+rex = Dog("Рекс", 3)
+kitty = Cat("Китти", 1)
+
+print(animal.get_name(), animal.make_sound())
+print(rex.get_name(), rex.make_sound())
+print(kitty.get_name(), kitty.make_sound())
+
+for pet in (animal, rex, kitty):
+    print(pet.make_sound())
+
+print(rex.get_name(), rex.get_age())
+print(kitty.get_name(), kitty.get_age())
+
+rex.set_name("Бобик")
+rex.set_age(5)
+kitty.set_name("Мурка")
+kitty.set_age(2)
+
+print(rex.get_name(), rex.get_age())
+print(kitty.get_name(), kitty.get_age())
